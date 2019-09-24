@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
     const options = ['rock', 'paper', 'scissors'];
     let result = options[Math.floor(Math.random() * options.length)];
@@ -5,50 +8,51 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    
     let selection = prompt('Please enter your selection');
-    let playerScore = 0;
-    let computerScore = 0;
-    let result = "";
 
     playerSelection = selection.toLowerCase();
     computerSelection = computerPlay();
 
-    console.log(playerScore)
+    console.log("Player: " + playerScore + ", Computer: " + computerScore)
 
     if (playerSelection == 'rock') {
         if (computerSelection == 'rock') {
-            return "It's a draw!"
+            computerScore++;
+            playerScore++;
+            return "It's a draw, one point each!"
         } else if (computerSelection == 'paper') {
-            computerScore+=1;
+            computerScore++;
             return "You lose!"
         } else {
-            playerScore+=1;
+            playerScore++;
             return "You win!"
         }
     } else if (playerSelection == 'paper') {
         if (computerSelection == 'paper') {
-            return "It's a draw!"
+            computerScore++;
+            playerScore++;
+            return "It's a draw, one point each!"
         } else if (computerSelection == 'scissors') {
-            computerScore+=1;
+            computerScore++;
             return "Computer wins!"
         } else {
-            playerScore+=1;
+            playerScore++;
             return "You win!"
         }
     } else if (playerSelection == 'scissors') {
         if (computerSelection == 'scissors') {
-            return "It's a draw!"
+            computerScore++;
+            playerScore++;
+            return "It's a draw, one point each!"
         } else if (computerSelection == 'rock') {
-            computerScore+=1;
+            computerScore++;
             return "Computer wins!"
         } else {
-            playerScore+=1;
+            playerScore++;
             return "You win!"
         }
     }
-
-    
-
 }
 
 function game() {
