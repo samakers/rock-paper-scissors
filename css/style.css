@@ -1,0 +1,12 @@
+body {
+  background-color: lightblue;
+}
+
+.buttons {
+  margin: 0 auto;
+  text-align: center;
+}
+.scoreAndResult {
+  margin: 0 auto;
+  text-align: center;
+}

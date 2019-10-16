@@ -1,5 +1,10 @@
 let playerScore = 0;
 let computerScore = 0;
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+const results = document.getElementById("results");
+const score = document.getElementById("score");
 
 function computerPlay() {
   const options = ["rock", "paper", "scissors"];
@@ -7,58 +12,81 @@ function computerPlay() {
   return result;
 }
 
-function playRound(playerSelection, computerSelection) {
-  let selection = prompt("Please enter your selection");
+function playRound() {
+  let playerSelection;
+  computerPlay();
 
-  playerSelection = selection.toLowerCase();
-  computerSelection = computerPlay();
+  rock.addEventListener("click", function() {
+    playerSelection == "rock";
+    computerSelection = computerPlay();
 
-  console.log("Player: " + playerScore + ", Computer: " + computerScore);
-
-  if (playerSelection == "rock") {
     if (computerSelection == "rock") {
       computerScore++;
       playerScore++;
-      return "It's a draw, one point each!";
+
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "It's a draw!";
     } else if (computerSelection == "paper") {
       computerScore++;
-      return "You lose!";
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "You lose!!";
     } else {
       playerScore++;
-      return "You win!";
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "You win!";
     }
-  } else if (playerSelection == "paper") {
+  });
+
+  paper.addEventListener("click", function() {
+    playerSelection == "paper";
+    computerSelection = computerPlay();
+
     if (computerSelection == "paper") {
       computerScore++;
       playerScore++;
-      return "It's a draw, one point each!";
+
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "It's a draw!";
     } else if (computerSelection == "scissors") {
       computerScore++;
-      return "Computer wins!";
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "You lose!!";
     } else {
       playerScore++;
-      return "You win!";
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "You win!";
     }
-  } else if (playerSelection == "scissors") {
+  });
+
+  scissors.addEventListener("click", function() {
+    playerSelection == "scissors";
+    computerSelection = computerPlay();
+
     if (computerSelection == "scissors") {
       computerScore++;
       playerScore++;
-      return "It's a draw, one point each!";
+
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "It's a draw!";
     } else if (computerSelection == "rock") {
       computerScore++;
-      return "Computer wins!";
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "You lose!!";
     } else {
       playerScore++;
-      return "You win!";
+      score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
+      results.textContent = "You win!";
     }
-  }
+  });
 }
 
-function game() {
+playRound();
+
+/*function game() {
   for (let i = 0; i < 5; i++) {
     const result = playRound();
     console.log(result);
   }
 }
 
-game();
+game();*/
