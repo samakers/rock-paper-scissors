@@ -25,15 +25,15 @@ function playRound() {
       playerScore++;
 
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "It's a draw!";
+      results.textContent = "Computer chose rock - it's a draw!";
     } else if (computerSelection == "paper") {
       computerScore++;
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "You lose!!";
+      results.textContent = "Computer chose paper - you lose!";
     } else {
       playerScore++;
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "You win!";
+      results.textContent = "Computer chose scissors - you win!";
     }
   });
 
@@ -46,15 +46,15 @@ function playRound() {
       playerScore++;
 
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "It's a draw!";
+      results.textContent = "Computer chose paper - it's a draw!";
     } else if (computerSelection == "scissors") {
       computerScore++;
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "You lose!!";
+      results.textContent = "Computer chose scissors - you lose!";
     } else {
       playerScore++;
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "You win!";
+      results.textContent = "Computer chose rock - you win!";
     }
   });
 
