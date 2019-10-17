@@ -67,15 +67,15 @@ function playRound() {
       playerScore++;
 
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "It's a draw!";
+      results.textContent = "Computer chose scissors - it's a draw!";
     } else if (computerSelection == "rock") {
       computerScore++;
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "You lose!!";
+      results.textContent = "Computer chose rock - you lose!";
     } else {
       playerScore++;
       score.textContent = `Playerscore: ${playerScore} Computer Score: ${computerScore}`;
-      results.textContent = "You win!";
+      results.textContent = "Computer chose paper - you win!";
     }
   });
 }
